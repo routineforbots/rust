@@ -47,18 +47,28 @@ String:
 ## Variables examples
 
 ```rust
-let two = 2;
+let two = 2; // let keyword is used to create variable
 
-let hello = "hello";
+let hello = "hello"; // this is string
 
-let j = 'j';
+let j = 'j'; // and this is character
 
 let my_half = 0.5;
 
-let mut my_name = "Bill";
+let mut my_name = "Bill"; // mut keyword means this variable is mutable
 
-let quite_program = false;
+let quite_program = false; // boolean variable
 
-let your_half = my_half;
+let your_half = my_half; //
 
 ```
+
+# Functions
+
+- A way to encapsulate program functionality
+
+- Optionally accept data
+
+- Optionally return data
+
+- Utilized for code organization and makes code easier to read
