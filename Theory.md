@@ -39,5 +39,6 @@ String:
 - Can be set to any value & type
 
 - Immutable by default, but can be muttable
+
   -- Immutable: cannot be changed
   -- Mutable: can be changed
