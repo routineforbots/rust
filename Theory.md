@@ -1,12 +1,12 @@
 # Data Types
 
-Memory only store binary data
+- Memory only store binary data
 
-> Anything can be represented in binary
+- Anything can be represented in binary
 
-Program determines what the binary represents
+- Program determines what the binary represents
 
-Basic types that are universally useful are provided by the language
+- Basic types that are universally useful are provided by the language
 
 # Basic Data Types
 
