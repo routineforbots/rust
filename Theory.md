@@ -41,4 +41,5 @@ String:
 - Immutable by default, but can be muttable
 
   -- Immutable: cannot be changed
+
   -- Mutable: can be changed
