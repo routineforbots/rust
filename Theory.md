@@ -28,4 +28,4 @@ Character:
 
 String:
 
-> "Hello", "string", "this is a sting", ït's 42"
+> "Hello", "string", "this is a sting", "it's 42"
