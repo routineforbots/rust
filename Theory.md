@@ -40,6 +40,25 @@ String:
 
 - Immutable by default, but can be muttable
 
-  -- Immutable: cannot be changed
+  -- Immutable: cannot be changed (are faster since there is no need to check for var changes)
 
   -- Mutable: can be changed
+
+## Variables examples
+
+```rust
+let two = 2;
+
+let hello = "hello";
+
+let j = 'j';
+
+let my_half = 0.5;
+
+let mut my_name = "Bill";
+
+let quite_program = false;
+
+let your_half = my_half;
+
+```
