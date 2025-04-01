@@ -8,7 +8,7 @@
 
 - Basic types that are universally useful are provided by the language
 
-# Basic Data Types
+## Basic Data Types
 
 Boolean:
 
@@ -29,3 +29,15 @@ Character:
 String:
 
 > "Hello", "string", "this is a sting", "it's 42"
+
+# Variables
+
+- Assign data to a temporary memory location
+
+- Allows programmer to easily work with memory
+
+- Can be set to any value & type
+
+- Immutable by default, but can be muttable
+  -- Immutable: cannot be changed
+  -- Mutable: can be changed
