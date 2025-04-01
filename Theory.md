@@ -24,7 +24,7 @@ Double / Float:
 
 Character:
 
-> A, B, c, 6, $
+> 'A', 'B', 'c', '6', '$'
 
 String:
 
