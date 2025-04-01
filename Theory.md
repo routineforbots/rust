@@ -72,3 +72,18 @@ let your_half = my_half; //
 - Optionally return data
 
 - Utilized for code organization and makes code easier to read
+
+## Function example
+
+```rust
+fn main() {
+    let x = add(1, 7);
+    print!("{x}");
+}
+
+
+fn add(a: i32, b: i32) -> i32 { // i32 means type of function parameter, 32 bit integer; -> i32 means type of data returned
+    return a + b;
+}
+
+```
