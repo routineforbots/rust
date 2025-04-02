@@ -139,5 +139,17 @@ println!("Small number);
 ![](/pics/nested_if-else.png)
 
 ```rust
+let a = 99;
+
+if a > 99 {
+  if a > 200 {
+    println!("Huge number");
+  } else {
+    println!("Big number");
+  }
+} else {
+  println!("Small number");
+}
+
 
 ```
