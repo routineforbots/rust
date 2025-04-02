@@ -87,3 +87,24 @@ fn add(a: i32, b: i32) -> i32 { // i32 means type of function parameter, 32 bit 
 }
 
 ```
+
+## Println macros
+
+- macros expands into additional rust code
+
+```rust
+let life = 42;
+println!("hello"); // ! sign indicates that we use macro instead of function
+
+println!("{:?}", life); // {:?} - we take external value (life) and include it into the macro using token :? which indicates that we want to use DEBUG PRINT -> 42
+
+println!("{:?} {:?}", life, life); // we use DEBUG PRINT for both "life" variables (=twice) -> 42 42
+
+println!("the meaning is {:?}", life); // here we use {:?} to substitute "life" variable's value (42) into the initial string -> the meaning is 42
+
+// other ways:
+println!("{life:?}"); // direct declaration of printing DEBUG version
+
+println!("{life}"); // printing out END USER DISPLAY version instead of DEBUG version
+
+```
