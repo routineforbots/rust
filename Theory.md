@@ -151,5 +151,33 @@ if a > 99 {
   println!("Small number");
 }
 
+```
+
+# Example for if..else if..else statement
+
+- if and else..if are logically on the same level!
+
+- try to always include "else", unless there truly is no alternative case
+
+![/pics/if-else_if-else.png]
+
+```rust
+let a = 99;
+
+//
+
+if a > 200 { // if this statement is false then execution is switched to else if
+  println!("Huge number");
+} // if true then execution jumps out of all conditions checking
+
+else if a > 99 { // same - if true then execution jumps out of all conditions checking
+
+  println!("Big number");
+
+} else { // will be executed if previous 2 checks are false
+
+  println!("Small number);
+
+}
 
 ```
