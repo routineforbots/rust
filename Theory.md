@@ -1,12 +1,12 @@
 # Data Types
 
-- Memory only store binary data
+- memory only store binary data
 
-- Anything can be represented in binary
+- anything can be represented in binary
 
-- Program determines what the binary represents
+- program determines what the binary represents
 
-- Basic types that are universally useful are provided by the language
+- basic types that are universally useful are provided by the language
 
 ## Basic Data Types
 
@@ -32,17 +32,17 @@ String:
 
 # Variables
 
-- Assign data to a temporary memory location
+- qssign data to a temporary memory location
 
-- Allows programmer to easily work with memory
+- qllows programmer to easily work with memory
 
-- Can be set to any value & type
+- can be set to any value & type
 
-- Immutable by default, but can be muttable
+- immutable by default, but can be muttable
 
-  -- Immutable: cannot be changed (are faster since there is no need to check for var changes)
+  -- immutable: cannot be changed (are faster since there is no need to check for var changes)
 
-  -- Mutable: can be changed
+  -- mutable: can be changed
 
 ## Variables examples
 
@@ -65,13 +65,13 @@ let your_half = my_half; //
 
 # Functions
 
-- A way to encapsulate program functionality
+- a way to encapsulate program functionality
 
-- Optionally accept data
+- optionally accept data
 
-- Optionally return data
+- optionally return data
 
-- Utilized for code organization and makes code easier to read
+- utilized for code organization and makes code easier to read
 
 ## Function example
 
@@ -106,5 +106,36 @@ println!("the meaning is {:?}", life); // here we use {:?} to substitute "life" 
 println!("{life:?}"); // direct declaration of printing DEBUG version
 
 println!("{life}"); // printing out END USER DISPLAY version instead of DEBUG version
+
+```
+
+# Control flow using "if" statement
+
+- code executed line-by-line
+
+- actions are performed & control flow may change
+
+- specific conditions can change control flow: "if", "else", "esle if""
+
+# Example for "if" and "else"
+
+(/pics/if-else.png)
+
+```rust
+let a = 99;
+
+if a > 99 { // condition evaluates statement for true or false
+
+println!("Big number");
+
+} else {
+
+println!("Small number);
+}
+```
+
+# Example for nested if..else statement
+
+```rust
 
 ```
