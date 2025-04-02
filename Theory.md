@@ -119,7 +119,7 @@ println!("{life}"); // printing out END USER DISPLAY version instead of DEBUG ve
 
 # Example for "if" and "else"
 
-(/pics/if-else.png)
+![](/pics/if-else.png)
 
 ```rust
 let a = 99;
