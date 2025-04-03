@@ -136,7 +136,7 @@ println!("Small number);
 
 # Example for nested if..else statement
 
-![/pics/nested_if-else.png]
+![](/pics/nested_if-else.png)
 
 ```rust
 let a = 99;
@@ -159,7 +159,7 @@ if a > 99 {
 
 - try to always include "else", unless there truly is no alternative case
 
-![/pics/if-else_if-else.png]
+![](/pics/if-else_if-else.png)
 
 ```rust
 let a = 99;
