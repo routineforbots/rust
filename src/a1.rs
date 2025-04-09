@@ -1,3 +1,4 @@
+// importing library to capture input
 use std::io;
 
 fn display_first_and_last_name() {
@@ -10,7 +11,7 @@ fn display_first_and_last_name() {
     println!("Enter you lastname: ");
     io::stdin().read_line(&mut last_name).expect("Failed to read last name");
 
-    println!("Hello, {:?}, {:?}", first_name.trim(), last_name.trim());
+    println!("Hello, {} {}!", first_name.trim(), last_name.trim());
 
 }
 
