@@ -244,3 +244,35 @@ cargo build --bin a1
 cargo run --bin a1
 
 ```
+
+# Basic Arithmetics Examples
+
+```rust
+fun sub(a: i32, b: i32) -> i32 {
+    a - b;
+}
+
+fn main() {
+
+    let sum = 2 + 2;
+
+    let value = 10 - 5;
+
+    let division = 10 / 2;
+
+    let mult = 5 * 5;
+
+    let five = sub(8 , 3);
+
+    // useful for checking if number is odd OR even
+    let remainder_div = 6 % 3; // 4
+
+    let rem2 = 6 % 2; // 2
+}
+```
+
+# Basic Math Examples
+
+```rust
+
+```
