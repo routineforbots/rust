@@ -223,3 +223,24 @@ while a != 5 {
   a += 1;
 }
 ```
+
+# How to compile and run rust code
+
+1st we need to initialize cargo project
+
+```bash
+cargo init
+```
+
+2nd we build from the source file located in ./src/bin/a1.rs
+
+```bash
+cargo build --bin a1
+```
+
+3rd step - we run it. But actually this command builds & runs so 2nd step can be skipped
+
+```bash
+cargo run --bin a1
+
+```
