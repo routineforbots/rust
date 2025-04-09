@@ -181,3 +181,45 @@ else if a > 99 { // same - if true then execution jumps out of all other conditi
 }
 
 ```
+
+# Repetition using loops
+
+- Called "looping"or "iterations"
+
+- multiple types of loops available:
+
+  -- "loop" - infinite loop
+
+  -- "while" - conditional loop
+
+- both types of loops can exit using "break" keyword
+
+![](/pics/loop.png)
+
+```rust
+fn main() {
+
+    let mut a = 0;
+
+    loop {
+        if a == 5 {
+            break;
+        }
+
+        println!("{:?}", a);
+        a += 1;
+    }
+}
+
+```
+
+![](/pics/while.png)
+
+```rust
+let mut a = 0;
+
+while a != 5 {
+  println!("{:?}, a");
+  a += 1;
+}
+```
