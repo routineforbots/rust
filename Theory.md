@@ -117,7 +117,7 @@ println!("{life}"); // printing out END USER DISPLAY version instead of DEBUG ve
 
 - specific conditions can change control flow: "if", "else", "esle if""
 
-# Example for "if" and "else"
+## Example for "if" and "else"
 
 ![](/pics/if-else.png)
 
@@ -134,7 +134,7 @@ println!("Small number);
 }
 ```
 
-# Example for nested if..else statement
+## Example for nested if..else statement
 
 ![](/pics/nested_if-else.png)
 
@@ -153,7 +153,7 @@ if a > 99 {
 
 ```
 
-# Example for if..else if..else statement
+## Example for if..else if..else statement
 
 - if and else..if are logically on the same level!
 
@@ -170,7 +170,7 @@ if a > 200 { // if this statement is false then execution is switched to else if
   println!("Huge number");
 } // if true then execution jumps out of all conditions checking
 
-else if a > 99 { // same - if true then execution jumps out of all conditions checking
+else if a > 99 { // same - if true then execution jumps out of all other conditions checking
 
   println!("Big number");
 
