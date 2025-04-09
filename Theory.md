@@ -293,4 +293,36 @@ fn display_sum_result(c: i32) {
 }
 ```
 
-#
+# Control flow with if & else
+
+```rust
+fn main() {
+
+    let age = 18;
+
+    if age >= 21 {
+        println!("you can buy it");
+    } else {
+        println!("you are too young");
+    }
+}
+```
+
+another example
+
+```rust
+fn main() {
+
+    let input = true;
+
+    if input {
+
+        println!("hello");
+
+    } else {
+
+        println!("goodbye");
+
+    }
+
+```
