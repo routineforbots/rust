@@ -494,6 +494,19 @@ fn main() {
 Repetition using while
 
 ```rust
+fn main() {
+    let mut counter = 1;
 
+    while i <= 3 {
+
+        println!("{:?}", i);
+
+        i += 1;
+    }
+
+
+}
 
 ```
+
+Working with the Data | enum
