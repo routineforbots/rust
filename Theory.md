@@ -326,3 +326,174 @@ fn main() {
     }
 
 ```
+
+example for if & else..if
+
+```rust
+fn main() {
+
+    let input = 7;
+
+    if input < 5 {
+
+        println!("<5");
+
+    } else if input == 5 {
+
+        println!("=5");
+
+    } else {
+        println!(">5");
+    }
+
+}
+```
+
+# Match Expressions
+
+- add logic to program
+
+- similar to if..else
+
+- must be exhaustive == all possible values must be coded in it's logic (think switch)
+
+- match will be checked by the complier and if a new possiblity is added, you will be notified when this occurs
+
+- else..if is not checked by the compiler and code may contain a bug, if a new posibility is added
+
+```rust
+fn main() {
+  let some_bool = true;
+
+  match some_bool {
+    // match works on expressions and not statements - that is why comma is used instead of ;
+    true => println!("its true"),
+    false => println!("its false"),
+
+  }
+
+}
+
+```
+
+another example
+
+```rust
+fn main() {
+  let some_int = 3;
+  match some_int {
+    1 => println!("its 1"),
+    2 => println!("its 2"),
+    3 => println!("its 3"),
+    _ => println!("its something else"), // sign _ means every possible value
+
+  }
+
+}
+
+```
+
+making decisions with match
+
+```rust
+fn main() {
+
+  let my_name = "Bob";
+
+  match my_name {
+    "Jayson" => println!("That is my name"),
+    "Bob"=> println!("Not my name"),
+    "Alice" => println!("Hello Alice"),
+    _ => println!("Nice to meet you"),
+  }
+}
+
+```
+
+basic match expressions
+
+```rust
+fn main() {
+
+    let my_bool = false;
+
+
+    match my_bool {
+
+        true => println!("it's true"),
+        false => println!("it's false"),
+    }
+
+}
+
+```
+
+basic match expressions 2
+
+```rust
+fn main() {
+    let my_var = 3;
+
+    match my_var {
+
+        1 => println!("one"),
+        2 => println!("two"),
+        3 => println!("three"),
+        _ => println!("other"),
+    }
+
+}
+
+```
+
+repetition using loop
+
+```rust
+
+fn main() {
+
+  let mut my_increment = 3;
+
+  loop {
+
+    println!("{:?}", my_increment);
+
+    my_increment -= 1;
+
+    if my_increment == 0 {
+      println!("loop done");
+      break;
+
+    }
+  }
+}
+
+```
+
+another repetition using loop
+
+```rust
+fn main() {
+
+    let mut my_var = 1;
+
+    loop {
+        println!("{:?}", my_var.to_string());
+
+        if my_var == 4 {
+            break;
+        }
+
+        my_var += 1;
+
+    }
+}
+
+```
+
+Repetition using while
+
+```rust
+
+
+```
