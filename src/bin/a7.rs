@@ -8,10 +8,8 @@ enum Colours {
     Violet
 }
 
-fn main() {
-    let my_colour = Colours::Indigo;
-
-    match my_colour {
+fn print_colour(i: Colours) {
+      match i {
         Colours::Red => println!("Red"),
         Colours::Orange => println!("Orange"),
         Colours::Yellow => println!("Yellow"),
@@ -20,5 +18,14 @@ fn main() {
         Colours::Indigo => println!("Indigo"),
         Colours::Violet => println!("Violet"),
     }
+
+
+}
+
+fn main() {
+    let my_colour = Colours::Indigo;
+
+    print_colour(my_colour);
+
 
 }
