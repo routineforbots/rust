@@ -509,4 +509,65 @@ fn main() {
 
 ```
 
-Working with the Data | enum
+# Working with the Data | enum
+
+- enumeration is a data that can be one of multiple different possibilities
+
+- custom enum provides possiblity to create your own type in Rust
+
+- each possibility is called a "variant"
+
+- provides information about your program to the compilers (= more robust programs when paired with match expression)
+
+![](/pics/enum.png)
+
+```rust
+
+enum Direction { // created outside of main function
+    Left,
+    Right
+
+}
+
+
+fn main() {
+
+    let go = Direction::Left;
+
+    match go {
+        Direction::Left => println!("go left"),
+        Direction::Right => println!("go right"),
+    }
+
+}
+
+```
+
+Custom enum example
+
+```rust
+enum Colours {
+    Red,
+    Orange,
+    Yellow,
+    Green,
+    Blue,
+    Indigo,
+    Violet
+}
+
+fn main() {
+    let my_colour = Colours::Indigo;
+
+    match my_colour {
+        Colours::Red => println!("Red"),
+        Colours::Orange => println!("Orange"),
+        Colours::Yellow => println!("Yellow"),
+        Colours::Green => println!("Green"),
+        Colours::Blue => println!("Blue"),
+        Colours::Indigo => println!("Indigo"),
+        Colours::Violet => println!("Violet"),
+    }
+
+}
+```
