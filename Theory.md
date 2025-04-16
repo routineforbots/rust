@@ -590,7 +590,7 @@ fn main() {
 
 ![](/pics/struct.png)
 
-# Struct example
+Struct example 1
 
 ```rust
 struct GroceryItem {
@@ -609,7 +609,7 @@ fn main() {
 
 ```
 
-Struct example
+Struct example 2
 
 ```rust
 
@@ -686,6 +686,104 @@ fn main() {
 
 }
 
+```
 
+# Working with the Data | Tuples
+
+- type of record which consists of "lines of information on a piece of paper"
+
+- tuples is way to access each piece of data within that line OR within that record
+
+- data is stored anonymously and there is no need to name fields
+
+- used to return pairs of data from functions
+
+- can be "destructured" easily into variables
+
+- can contain any number of fields but it is better to use struct when more than 2 or 3 fields
+
+![](/pics/tuples.png)
+
+```rust
+fn main() {
+  let coord = (2, 3);
+  println!("{:?} - {:?}", coord.0, coord.1);
+
+  // how to destructure
+  let (x, y) = (2, 3);
+  println!("{:?} - {:?}", x, y);
+
+  let (name, age) = ("Emma", 20);
+
+  // sometimes it is better to make structs instead of tuples to not loose context access tuples elements with X.NUMBER notation
+  let favourites = ("red", 14, "pizza", "home");
+
+  let food = favourites.2;
+
+}
+```
+
+# Expressions
+
+- rust is an expression-based language which means most things are evaluated and return some value
+
+- expression value coalesce to a single point which can be used for nesting logic
+
+![](/pics/expressions.png)
+
+![](/pics/expressions2.png)
+
+![](/pics/expressions3.png)
+
+Example 1
+
+```rust
+enum Access {
+    Admin,
+    Manager,
+    User,
+    Guest
+}
+
+fn main() {
+    // user access level
+    let access_lvl = Access::Guest;
+
+    // checking if user has needed access level
+    let can_access_file = match access_lvl {
+        Access::Admin => true,
+        _ => false,
+    };
+
+    println!("can access: {:?}", can_access_file);
+
+}
 
 ```
+
+Example 2
+
+```rust
+
+fn print_msg (gt_100: bool) {
+    match gt_100 {
+        true => println!("its big"),
+        _ => println!("its small")
+    }
+
+}
+
+
+fn main() {
+
+    let input_variable = 101;
+
+    let is_gt_100 = input_variable > 100;
+
+    print_msg(is_gt_100);
+
+}
+
+```
+
+# Intermediate Memory
