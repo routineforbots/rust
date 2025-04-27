@@ -792,8 +792,45 @@ fn main() {
 
 - computer is optimized for bytes: 1 byte = 8 bit
 
+- memory uses addresses & offsets
+
+- addresses are permanent, data differs
+
 - all data in memory has an address
+
   -- used to locate data
+
   -- always the same, only data changes
 
 - usually don't utilize address directly - variables handle most of the work
+
+- memory offsets can be used to locate items at the address => "index" into some data
+
+- offsets always begin at 0
+
+- they represent the number of bytes away from the original address
+
+  -- normally deal with indexes instead of offsets directly
+
+![](/pics/addresses_offsets.png)
+
+Example 2:
+
+![](/pics/addresses_offsets2.png)
+
+- location here is: Address 16, Offset 3
+
+- variable (data) will automatically handle the address
+
+- index [4] will automaticlly get mapped to the offset by the compiler
+
+<br>
+
+# Ownership
+
+- it allows rust to execute code in a preformant manner
+- ensures that compiled code executes correctly under various circumstances
+- all programs must track their memory usage otherwise "leak" occurs
+- rust utilizes an ownership model to manage memory
+- the owner of memory is responsible for cleaning up the memory; in rust owner is a function
+- memory can either be "moved"or "borrowed"
