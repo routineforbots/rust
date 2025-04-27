@@ -829,8 +829,29 @@ Example 2:
 # Ownership
 
 - it allows rust to execute code in a preformant manner
+
 - ensures that compiled code executes correctly under various circumstances
+
 - all programs must track their memory usage otherwise "leak" occurs
+
 - rust utilizes an ownership model to manage memory
+
 - the owner of memory is responsible for cleaning up the memory; in rust owner is a function
+
 - memory can either be "moved"or "borrowed"
+
+Example:
+
+![](/pics/ownership.png)
+
+the program here will not compile since we are calling "display_light(dull)" twice because of the ownership model:
+
+- when we create "Light::Dull" and assign it to "dull" variable it is onwed by the main() function -> let dull = Light::Dull;
+
+- when we call "display_light" with "dull", this "Light::Dull" moves into a new function (defined outside of "display_light" function) -> display_light(dull);
+
+- now that the data has been moved into the "display_light" function, it is now owned by this function
+
+- any function which owns data is required to delete the data once the function completes (deleted after first "display_light" function finishes)
+
+- so it is no longer available to use in the same function call
