@@ -32,9 +32,9 @@ String:
 
 # Variables
 
-- qssign data to a temporary memory location
+- assign data to a temporary memory location
 
-- qllows programmer to easily work with memory
+- allows programmer to easily work with memory
 
 - can be set to any value & type
 
@@ -787,3 +787,13 @@ fn main() {
 ```
 
 # Intermediate Memory
+
+- memory is stored using binary: 0 or 1 bit
+
+- computer is optimized for bytes: 1 byte = 8 bit
+
+- all data in memory has an address
+  -- used to locate data
+  -- always the same, only data changes
+
+- usually don't utilize address directly - variables handle most of the work
