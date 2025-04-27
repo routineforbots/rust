@@ -838,7 +838,15 @@ Example 2:
 
 - the owner of memory is responsible for cleaning up the memory; in rust owner is a function
 
+- cleaning occurs automatically at the end of the scope
+
+- cleaning is also call "a drop"
+
 - memory can either be "moved"or "borrowed"
+
+- default behaviour is to "move" memory to a new owner
+
+## Move memory
 
 Example:
 
@@ -855,3 +863,70 @@ the program here will not compile since we are calling "display_light(dull)" twi
 - any function which owns data is required to delete the data once the function completes (deleted after first "display_light" function finishes)
 
 - so it is no longer available to use in the same function call
+
+- to fix this if we still want to call this function twice we need to use "Borrow" instead of "Moving" (& sign before vaiables):
+
+## Borrow memory
+
+![](/pics/ownership2.png)
+
+- with ampersand "&" sign we indicated that we borrowing data OR referencing data
+
+- in our example ownership will not transfer from main() function (owner) and will not be deleted
+
+- it is needed is the memmory efficency - imagine you need to copy huge variable each time instead of referencing
+
+## Ownership examples
+
+```rust
+struct Book {
+    pages: i32,
+    rating: i32,
+}
+
+fn display_page_count(book: &Book) {
+    println!("pages = {:?}", book.pages);
+}
+
+fn display_rating(book: &Book) {
+    println!("rating = {:?}", book.rating);
+}
+
+
+fn main() {
+    let book = Book {
+        pages: 5,
+        rating: 9,
+    };
+
+    display_page_count(&book);
+    display_rating(&book);
+}
+
+```
+
+```rust
+struct Item {
+    quantity: i32,
+    id: i32,
+}
+
+fn display_quantity(i: &Item) {
+    println!("The quantity of an item: {:?}", i.quantity);
+}
+
+fn display_id(j: Item) {
+    println!("The id number of an item: {:?}", j.id);
+}
+
+fn main() {
+    let my_item = Item{quantity: 3, id: 5};
+
+    display_quantity(&my_item);
+
+    display_id(my_item);
+
+}
+
+
+```
