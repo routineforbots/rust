@@ -1010,9 +1010,9 @@ impl Box {
     fn new(weight: f64, color: Colors, dimensions: Dimensions) -> Self {
 
         Self {
+            dimensions,
             weight,
             color,
-            dimensions,
         }
     }
 
@@ -1092,5 +1092,123 @@ fn main() {
     large_box.print();
 
 }
+
+
+```
+
+# Vector
+
+- multiple pieces of data, must be the same type => are used to organize similar data within the code
+
+- used for lists of information
+
+- can add, remove and traverse the entries
+
+- the vec! macro can be used to make vectors
+
+- use for..in to iterate through items of a vector
+
+![](/pics/vectors.png)
+
+```rust
+fn main() {
+    // vector creation with vec macro
+    let my_numbers = vec![1, 2, 3];
+
+    println!("{:?}", my_numbers); // [1, 2, 3]
+
+    // alternative way to define vector
+    let mut my_numbers = Vec::new();
+
+    // pushing
+    my_numbers.push(1);
+    my_numbers.push(2);
+    my_numbers.push(3);
+
+    // removes last element from the vector - 3
+    my_numbers.pop();
+
+    // getting number of items from the vector
+    my_numbers.len(); // this is 2
+
+    println!("{:?}", my_numbers);
+
+    // accessing vector items via slice notation with indexes, starting from 0
+    let two = my_numbers[1]; // 2
+
+    // vector of predefined size 5 filled with default values 0
+    let my_numbers2 = vec![0; 5]; // [0, 0, 0, 0, 0]
+
+    // iteration through vector
+    let my_numbers = vec![1, 2, 3];
+
+    for num in my_numbers {
+        println!("{:?}", num)
+    }
+
+
+}
+```
+
+Another example of vector usage
+
+```rust
+struct Test {
+    score: i32
+}
+
+
+fn main() {
+    // lets create a vector with several Test objects
+    let my_scores = vec![
+        Test { score: 90 },
+        Test { score: 88 },
+        Test { score: 77 },
+        Test { score: 93 },
+    ];
+
+    for num in my_scores {
+        println!("{}", num.score);
+    }
+
+}
+
+```
+
+Additional example of vector usage
+
+```rust
+
+
+fn main() {
+
+    let my_vector = vec![ 10, 20, 30, 40 ];
+
+    // for loop gets the ownership of my_vector so we need to borrow it otherwise it will be deleted after loop execution is completed
+    for num in &my_vector {
+        /*
+        // one way to do that:
+
+        if num == 30 {
+            println!("thirty");
+        } else {
+            println!("{:?}", num);
+        }
+
+        */
+
+        match num {
+            30 => println!("thirty"),
+            _ => println!("{:?}", num),
+        }
+
+    }
+    println!("\n");
+
+    println!("Total number of elements in a vector: {}", my_vector.len());
+
+}
+
+
 
 ```
