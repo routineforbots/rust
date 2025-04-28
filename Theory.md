@@ -928,5 +928,169 @@ fn main() {
 
 }
 
+```
+
+# Keyword impl
+
+- impl allows you to implement functionality on specific enumerations & structs
+- helps to better organize the code
+
+```rust
+// example of impl usage to resturcture the code
+
+struct Temperature {
+    degrees_f: f64,
+}
+
+/* old location of a code block
+fn snow_temp(temp: Temp) {
+    println!("{:?} degrees F", temp.degrees_f);
+}
+*/
+
+
+// this extends struct Temperature with additional functionality
+impl Temperature {
+    fn show_temp(temp: Temperature) {
+    println!("{:?} degrees F", temp.degrees_f);
+    }
+}
+
+
+fn main() {
+    let hot = Temperature {degrees_f: 99.9};
+//    show_temp(hot);
+    Temperature::show_temp(hot);
+}
+```
+
+additional way to optimize this code it is to add reference to itself - Temperature struct here:
+
+```rust
+
+struct Temperature {
+    degrees_f: f64,
+}
+
+impl Temperature {
+    fn show_temp(&self) { // &self means that we already implemented is somewhere in a program
+
+    println!("{:?} degrees F", self.degrees_f); // we can now directly address to the struct's variables
+    }
+
+    fn freezing() -> Self { // Self here means we creating a new one or refering to this specific object
+        Self {
+            degrees_f: 32.0
+        }
+    }
+}
+
+fn main() {
+    let hot = Temperature {degrees_f: 99.9};
+//    show_temp(hot);
+    hot.show_temp(); // and now this is how we can call the function on Temperature types - directly!
+
+    let cold = Temperature::freezing();
+    cold.show_temp();
+}
+
+```
+
+Another example how we can reshape the following code with impl keyword
+
+```rust
+struct Box {
+    dimensions: Dimensions,
+    weight: f64,
+    color: Colors,
+}
+
+impl Box {
+
+    fn new(weight: f64, color: Colors, dimensions: Dimensions) -> Self {
+
+        Self {
+            weight,
+            color,
+            dimensions,
+        }
+    }
+
+    fn print(&self) {
+        self.color.print();
+        self.dimensions.print();
+        println!("weight: {:?}", self.weight);
+        println!("\n");
+
+    }
+
+}
+
+
+enum Colors {
+    Black,
+    Red,
+    Blue,
+}
+
+impl Colors {
+    fn print(&self) {
+        match self {
+            Colors::Black => println!("color: black"),
+            Colors::Red => println!("color: red"),
+            Colors::Blue => println!("color: blue"),
+            _ => println!("color was not defined"),
+        }
+    }
+
+}
+
+
+struct Dimensions {
+    width: f64,
+    height: f64,
+    dep: f64,
+}
+
+impl Dimensions {
+    fn print(&self) {
+        println!("width: {:?}", self.width);
+        println!("height: {:?}", self.height);
+        println!("dep: {:?}", self.dep);
+    }
+}
+
+
+fn main() {
+    let small_dimensions  = Dimensions {
+        width: 1.0,
+        height: 2.0,
+        dep: 3.0,
+    };
+
+    let small_box = Box::new(5.0, Colors::Red, small_dimensions);
+    small_box.print();
+
+
+    let medium_dimensions  = Dimensions {
+        width: 10.0,
+        height: 20.0,
+        dep: 30.0,
+    };
+
+    let medium_box = Box::new(23.3, Colors::Black, medium_dimensions);
+    medium_box.print();
+
+
+    let large_dimensions  = Dimensions {
+        width: 100.0,
+        height: 200.0,
+        dep: 300.0,
+    };
+
+    let large_box = Box::new(199.3, Colors::Blue, large_dimensions);
+    large_box.print();
+
+}
 
 ```
