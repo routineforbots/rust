@@ -1096,7 +1096,7 @@ fn main() {
 
 ```
 
-# Vector
+# Data Types | Vector
 
 - multiple pieces of data, must be the same type => are used to organize similar data within the code
 
@@ -1209,6 +1209,94 @@ fn main() {
 
 }
 
+```
 
+# Data Types | Strings
+
+- Two types are commonly used:
+
+  - String - owned
+
+  - &str - borrowed String slice
+
+- Use .to_owned() or String::from() to create an owned copy of a string slice
+
+- Must use an owned String to store in a struct
+
+- Use &str when passing to a function
+
+![](/pics/strings1.png)
+
+```rust
+fn print_it(data: &str) {
+    println!("{:?}", data);
+}
+
+fn main() {
+    print_it("a string slice"); // by default string created like that is automatically Borrowed
+
+    // two options on how to create owned string:
+    let owned_string = "owned string".to_owned();
+    let another_owned = String::from("another");
+
+    // and now we need to borrow them
+    print_it(&owned_string);
+    print_it(&another_owned);
+}
+```
+
+Another example
+
+```rust
+struct Employee {
+    name: String,
+}
+
+fn main() {
+
+    let emp_name = "Jayson".to_owned();
+
+    // alternative way:
+    // let emp_name = String::from("Jayson");
+
+    let emp = Employee {
+        name: emp_name
+    };
+}
+```
+
+And additional example
+
+```rust
+struct LineItem {
+
+    name: String,
+    count: i32,
+}
+
+fn main() {
+    let receipt = vec![
+        LineItem {
+            name: "cereal".to_owned(), // since struct requires owned string
+            count: 3,
+        },
+        LineItem {
+            name: String::from("fruit"), // same
+            count: 2,
+        },
+
+
+    ];
+
+    for item in receipt {
+        println!("name: {}, count: {}", item.name, item.count);
+    }
+}
 
 ```
+
+<br>
+
+# Derive macro
+
+- functionality can be automatically implemented for enums and structs with Derive macro

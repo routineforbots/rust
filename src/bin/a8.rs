@@ -17,7 +17,6 @@ struct Drink {
 fn print_drink_flavors (i: Drink) {
     
     println!("{}", i.title);
-    println!("");
 
     match i.flavor {
         Flavors::Sweet => println!("sweet"),
