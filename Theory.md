@@ -1413,3 +1413,47 @@ let clicks: Vec<Mouse> = vec![
 ```
 
 # Enum revisited
+
+- enum is a type that can represent one item at a time
+
+- each item is called a variant
+
+- enum is not limited to just plain variants, each variant can contain additional data
+
+- enum variants can optionally contain data; the data can be another enum
+
+- can mix plain identifiers and data-containing variants within the same enum
+
+- more that one piece of data can be associated with a variant
+
+```rust
+enum Mouse {
+    LeftClick,
+    RightClick,
+    MiddleClick,
+    Scroll(i32),
+    Move(i32, i32),
+
+}
+
+enum PromoDiscount {
+    NewUser,
+    Holiday(String), // optionally contain String
+}
+
+enum Discount {
+    Percent(f64),
+    Flat(i32),
+    Promo(PromoDiscount),
+    Custom(String), // optionally contain String
+}
+
+```
+
+# Advanced match
+
+```rust
+enum
+
+
+```
