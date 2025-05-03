@@ -1373,3 +1373,43 @@ fn main() {
 ```
 
 # Type Annotations
+
+- are mostly optional within function bodies
+
+- required for function signatures:
+
+```rust
+ fn add(a: i32, b: i32) -> i32 { // i32 types is explicitly defined in a "function signature"
+    a + b
+}
+```
+
+- types are usually inferred by Rust compiler and you don't need to explicitly specify types for variables
+
+- can also be specified in code -> explicit type annotations
+
+```rust
+let x: i32 = 5;
+let name: String = String::from("John");
+let a: char = 'a';
+```
+
+- usage of generics (like vector)
+
+```rust
+enum Mouse {
+    LeftClick,
+    RightClick,
+}
+
+// we can explicitly define elements for vector
+let numbers: Vec<i32> = vec![1, 2, 3];
+let letters: Vec<char> = vec!['a', 'b'];
+let clicks: Vec<Mouse> = vec![
+    Mouse::LeftClick,
+    Mouse::RightClick,
+    Mouse::LeftClick,
+]
+```
+
+# Enum revisited
