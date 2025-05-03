@@ -1,30 +1,29 @@
-struct LineItem {
-
-    name: String,
-    count: i32,
+#[derive(Debug, Clone, Copy)] // derive must be put right before the element - enum here
+enum Position {
+    Manager,
+    Supervisor,
+    Worker
 }
 
-fn print_name(name: &str) { // this function requires &str borrowed from struct
-    println!("name: {}", name);
+#[derive(Debug, Clone, Copy)] // derive must be put right before the element - struct here
+struct Employee {
+    position: Position,
+    work_hours: i64
+}
+
+fn print_employee(emp: Employee) { // notice that we don't Borrow here (no & sign)
+    println!("{:?}", emp);
 }
 
 
 fn main() {
-    let receipt = vec![
-        LineItem {
-            name: "cereal".to_owned(), // since struct requires owned string
-            count: 3,
-        },
-        LineItem {
-            name: String::from("fruit"), // same - struct requires owned string
-            count: 2,
-        },
+    let me = Employee {
+        position: Position::Worker,
+        work_hours: 40
 
+    };
 
-    ];
+    print_employee(me);
+    print_employee(me); // we didn't borrow Employee but since we used Clone, Copy there will be no error - two copies of Employee were created
 
-    for item in receipt {
-        print_name(&item.name); // this will create string slice borrowed from the String defined in struct
-        println!("count: {}", item.count);
-    }
 }

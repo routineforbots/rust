@@ -1300,3 +1300,76 @@ fn main() {
 # Derive macro
 
 - functionality can be automatically implemented for enums and structs with Derive macro
+- special macro that is applied to enum and struct
+- all fields within the Derived element must be also Derived
+- there are several Derives that can be used: Debug, Clone, Copy
+
+## Derive macro | Debug
+
+```rust
+#[derive(Debug)] // derive must be put right before the element - enum here
+enum Position {
+    Manager,
+    Supervisor,
+    Worker
+}
+
+#[derive(Debug)] // derive must be put right before the element - struct here
+struct Employee {
+    position: Position,
+    work_hours: i64
+}
+
+fn main() {
+    let me = Employee {
+        position: Position::Worker,
+        work_hours: 40
+
+    };
+
+    println!("{:?}", me.position);// Worker
+    println!("{:?}", me); // Employee { position: Worker, work_hours: 40 }
+
+}
+```
+
+## Derive macro | Clone & Copy
+
+- allows compiler to automatically make a copy when you store it in struct OR function
+- this means that ownership is no longer transferd when you Move and Copy is made instead
+- shouldn't be used on big enums and structs OR multiple times -> memory optimizations
+
+```rust
+#[derive(Debug, Clone, Copy)] // derive must be put right before the element - enum here
+enum Position {
+    Manager,
+    Supervisor,
+    Worker
+}
+
+#[derive(Debug, Clone, Copy)] // derive must be put right before the element - struct here
+struct Employee {
+    position: Position,
+    work_hours: i64
+}
+
+fn print_employee(emp: Employee) { // notice that we don't Borrow here (no & sign)
+    println!("{:?}", emp);
+}
+
+
+fn main() {
+    let me = Employee {
+        position: Position::Worker,
+        work_hours: 40
+
+    };
+
+    print_employee(me);
+    print_employee(me); // we didn't borrow Employee but since we used Clone, Copy there will be no error - two copies of Employee were created
+
+}
+
+```
+
+# Type Annotations
