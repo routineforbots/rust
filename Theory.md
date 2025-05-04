@@ -1453,7 +1453,48 @@ enum Discount {
 # Advanced match
 
 ```rust
-enum
+enum Discount {
+    Percent(i32),
+    Flat(i32)
+}
 
+struct Ticket {
+    event: String,
+    price: i32,
+
+}
+
+// better way to refer to anything else variant
+
+fn main() {
+    let n = 100;
+    match n {
+        3 => println!("three"), // if it is 3
+        other => println!("number: {:?}", other), // if it something else; we can refer to that something else as the "other" variable
+        // _ => println!("nothing", n), // _ means anything else but we ignore any value; the best way is to do it is with "other" example
+    }
+
+    let flat = Discount::Flat(2);
+    // how to match on enum that have extra data on a variants
+    match flat {
+        Discount::Flat(2) => println!("flat 2 "),
+        Discount::Flat(amount) => println!("flat discount of {:?}", amount), // match anything and it will be accessible the variable name
+        _ => (), // this is how we can ignore everything else and will return nothing
+    }
+
+    // matching on a struct
+    let concert = Ticket {
+        event: "concert".to_owned(),
+        price: 50,
+    };
+
+    match concert {
+        // matching on specific price and capturing the event name:
+        Ticket {price: 50, event} => println!("event @ 50 {:?}", event),
+
+        // matching on price only
+        Ticket {price, ..} => println!("price = {:?}", price),
+    }
+}
 
 ```
