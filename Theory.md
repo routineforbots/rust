@@ -1498,3 +1498,26 @@ fn main() {
 }
 
 ```
+
+# Working With Optional Data with Option Type
+
+- it may be some data of specified type OR nothing
+
+- used when data may not be required or os unavailiable
+  - unable to find something
+  - ran out of items in a list
+  - form field not filled out
+
+```rust
+
+// the Option type is part of rust programming library and is defined as enum with 2 variants:
+enum Option<T> { // <T> means it contains some type but we don't know which one
+    Some(T), // 1st variable Some represents some data
+    None // 2nd variable None represents no data
+}
+
+```
+
+![](/pics/option.png)
+
+![](/pics/option2.png)
