@@ -1503,15 +1503,21 @@ fn main() {
 
 - it may be some data of specified type OR nothing
 
+  - Some(variable_name) - means data is available
+  - None - means no data available
+
 - used when data may not be required or os unavailiable
+
   - unable to find something
   - ran out of items in a list
   - form field not filled out
 
+- Use Option<type> to declare an optional type
+
 ```rust
 
 // the Option type is part of rust programming library and is defined as enum with 2 variants:
-enum Option<T> { // <T> means it contains some type but we don't know which one
+enum Option<T> { // <T> means Option contains some type but we don't know which one
     Some(T), // 1st variable Some represents some data
     None // 2nd variable None represents no data
 }
@@ -1521,3 +1527,31 @@ enum Option<T> { // <T> means it contains some type but we don't know which one
 ![](/pics/option.png)
 
 ![](/pics/option2.png)
+
+```rust
+#[derive(Debug)]
+struct GroceryItem {
+    name: String,
+    qty: i32,
+}
+fn main() {
+    fn find_quantity(name: &str) -> Option<i32> {
+        let groceries = vec![
+            GroceryItem {name: "bananas".to_owned(), qty: 4,},
+            GroceryItem {name: "eggs".to_owned(), qty: 10,},
+            GroceryItem {name: "bread".to_owned(), qty: 1,},
+        ];
+        for item in groceries {
+            if item.name == name {
+                // early return from a function with return keyword
+                return Some(item.qty); // some represents the variants within the Option type
+            }
+        }
+        None // implicit return from a function
+    }
+
+    let test = find_quantity("meat");
+    println!("{:?}", test);
+}
+
+```

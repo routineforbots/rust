@@ -1,28 +1,23 @@
-struct Customer {
-    age: Option<i32>,
-    email: String,
+#[derive(Debug)]
+struct GroceryItem {
+    name: String,
+    qty: i32,
 }
-
-
 fn main() {
-    let mark = Customer {
-        age: Some(22),
-        email: "mark@example.com".to_owned(),
-    };
-    
-    let becky = Customer {
-        age: None,
-        email: "mark@example.com".to_owned(),
-    };
+    fn find_quantity(name: &str) -> Option<i32> {
+        let groceries = vec![
+            GroceryItem {name: "bananas".to_owned(), qty: 4,},
+            GroceryItem {name: "eggs".to_owned(), qty: 10,},
+            GroceryItem {name: "bread".to_owned(), qty: 1,},
+        ];
+        for item in groceries {
+            if item.name == name {
+                return Some(item.qty); // early return from a function
+            }
+        }
+        None // implicit return from a function
+    }
 
-    match mark.age {
-        Some(age) => println!("customer is {:?} years old", age),
-        None => println!("customer age is not provided"),
-    };
-
-    match becky.age {
-        Some(age) => println!("customer is {:?} years old", age),
-        None => println!("customer age is not provided"),
-    };
-
+    let test = find_quantity("meat");
+    println!("{:?}", test);
 }
