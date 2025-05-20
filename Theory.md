@@ -1634,7 +1634,7 @@ enum Result<T, E> { // T and E are used as placeholders for any types
 }
 ```
 
-Example
+Example 1
 
 ```rust
 // SoundData is a dummy data type here
@@ -1654,6 +1654,16 @@ Example
 ```
 
 Example 2
+
+<span style="background-color:rgb(140, 0, 255)">
+В Rust оператор ? используется для лаконичной обработки ошибок при извлечении значения из Result или Option. В частности, когда вы используете ? для значения Result<T, E>, он делает одно из двух:
+
+- Если Result — это Ok(value), он извлекает и возвращает value (типа T).
+- Если Result — это Err(error), он немедленно возвращает Err(error) (типа E) вызывающему коду, передавая ошибку вверх по стеку вызовов.
+
+Это особенно полезно в функциях, которые сами возвращают тип Result, позволяя избежать явного сопоставления с помощью match или unwrap.
+
+</span>
 
 ```rust
 #[derive(Debug)]
@@ -1680,6 +1690,7 @@ fn print_choice(choice: &MenuChoice) {
 
 fn pick_choice(input: &str) -> Result<(), String> { // Ok variant here will be nothing, defined with unit type: ()
     let choice: MenuChoice = get_choice(input)?; // ? operator here performs match operation:
+    // for output of get_choice() function:
     // if Result is Ok variant - inner data will be placed in that choice
     // an if it is Err variant - the error will be returned as the Err message from the function
     print_choice(&choice);
