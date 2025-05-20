@@ -1718,3 +1718,32 @@ fn main() {
 ```
 
 ![](/pics/result.png)
+
+# Data Structures | Hashmap
+
+- usefull for storing and retrieving information when you know what you are looking for (= have a key)
+- hashmap is a collection that stores data as key-value pairs
+  -- data is located and accessed using the "key"
+  -- the data is the "value"
+- similar to definitions in a dictionary
+- very fast to retrieve data using the key
+- data is stored in random order (differs from vectors where everything comes in the same order as was placed)
+
+## Find the data in hashmap
+
+- first value in () is the key and second one is the actual data:
+- method get(key) will retrive the data based on provided key;
+
+```rust
+people.insert("Susan", 21);
+
+people.get("Susan");
+```
+
+![](/pics/hashmap.png);
+
+## Iterate on hashmap
+
+- method iter() is used to get both keys and values in a tuple
+- method keys() is used to get keys only
+- method values() is used to get values only
