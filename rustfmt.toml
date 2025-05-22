@@ -1,0 +1,3 @@
+max_width = 80          # Максимальная длина строки
+chain_width = 40        # Длина цепочки методов, после которой будет перенос
+use_small_heuristics = "Default"
